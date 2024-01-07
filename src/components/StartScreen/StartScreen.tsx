@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Typography, Button } from '@mui/material';
 import { useGame } from '../../GameContext';
 import { getLocationName } from '../../utils';
 
 export const StartScreen = () => {
   const game = useGame();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language ?? 'en';
   const [currentPlayerIndex, setCurrentPlayerIndex] = useState<number>(0);
   const [isHidden, setIsHidden] = useState<boolean>(true);
 
@@ -23,18 +26,20 @@ export const StartScreen = () => {
 
   return <>
     <div>
-      <Typography variant="h5" mb={2}>Player {currentPlayerIndex + 1}</Typography>
+      <Typography variant="h5" mb={2}>{t('startScreen.player')} {currentPlayerIndex + 1}</Typography>
       {isHidden ? (
-        <Typography variant="h6">Click &quot;Show&quot; to see the location!</Typography>
+        <Typography variant="h6">{t('startScreen.clickShow')}</Typography>
       )
         : (
           game.spyPlayerIndex === currentPlayerIndex ?
-            <Typography variant="h6">You are a Spy!</Typography> :
-            <Typography variant="h6">Location: {getLocationName(game.locations[game.currentLocationIndex])}</Typography>
+            <Typography variant="h6">{t('startScreen.youAreSpy')}</Typography> :
+            <Typography variant="h6">
+              {t('startScreen.location')}: {getLocationName(game.locations[game.currentLocationIndex], currentLang)}
+            </Typography>
         )}
     </div>
     <Button variant="contained" onClick={handleNext} fullWidth>
-      {isHidden ? 'Show' : 'Next player'}
+      {isHidden ? t('startScreen.show') : t('startScreen.nextPlayer')}
     </Button>
   </>;
 };

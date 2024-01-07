@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Paper, css, styled } from '@mui/material';
 import { STATUSES, useGame } from '../../GameContext';
 import { InitialScreen } from '../InitialScreen';
@@ -11,6 +12,7 @@ const Wrapper = styled('div')(
   ({ theme }) => css`
     height: 100dvh;
     width: 100%;
+    min-width: 340px;
     padding: ${theme.spacing(2)};
     display: flex;
     align-items: center;
@@ -20,8 +22,8 @@ const Wrapper = styled('div')(
 
 const Content = styled(Paper)(
   ({ theme }) => css`
-    height: 340px;
-    width: 340px;
+    height: 360px;
+    width: 350px;
     max-height: 100%;
     max-width: 100%;
     padding: ${theme.spacing(3)};
@@ -34,6 +36,9 @@ const Content = styled(Paper)(
 
 export const Game = () => {
   const game = useGame();
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => { document.title = t('gameSpyByTr70k'); }, [i18n.language]);
 
   const getContent = () => {
     switch (game.status) {

@@ -1,0 +1,35 @@
+{
+  "gameSpyByTr70k": "Гра «Шпигун» від tr70k",
+  "initialScreen": {
+    "gameSettings": "Ігрові налаштування",
+    "language": "Мова",
+    "playersCount": "Кількість гравців",
+    "timeForRound": "Час на раунд",
+    "min": "хв",
+    "startGame": "Почати гру"
+  },
+  "startScreen": {
+    "player": "Гравець",
+    "clickShow": "Натисніть «Показати», щоб побачити локацію!",
+    "youAreSpy": "Ви шпигун!",
+    "location": "Локація",
+    "show": "Показати",
+    "nextPlayer": "Наступний гравець"
+  },
+  "timerScreen": {
+    "timeLeft": "Залишилося часу",
+    "askEachOther": "Ставте запитання один одному та дізнайтеся, хто Шпигун!",
+    "timeIsOver": "Час закінчився!",
+    "showResult": "Показати результат"
+  },
+  "resultScreen": {
+    "roundResult": "Результат раунду",
+    "location": "Локація",
+    "playerIsSpy": "Гравець {{spyIndex}} виявився Шпигуном!",
+    "nextRound": "Наступний раунд"
+  },
+  "gameOverScreen": {
+    "listIsOver": "Список локацій вичерпано :(",
+    "restartGame": "Перезапустити гру"
+  }
+}

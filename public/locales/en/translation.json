@@ -1,0 +1,35 @@
+{
+  "gameSpyByTr70k": "Game «Spy» by tr70k",
+  "initialScreen": {
+    "gameSettings": "Game settings",
+    "language": "Language",
+    "playersCount": "Players count",
+    "timeForRound": "Time for round",
+    "min": "min",
+    "startGame": "Start game"
+  },
+  "startScreen": {
+    "player": "Player",
+    "clickShow": "Click «Show» to see the location!",
+    "youAreSpy": "You are a Spy!",
+    "location": "Location",
+    "show": "Show",
+    "nextPlayer": "Next player"
+  },
+  "timerScreen": {
+    "timeLeft": "Time left",
+    "askEachOther": "Ask each other questions and find out who is the Spy!",
+    "timeIsOver": "Time is over!",
+    "showResult": "Show result"
+  },
+  "resultScreen": {
+    "roundResult": "Round result",
+    "location": "Локация",
+    "playerIsSpy": "Player {{spyIndex}} is a Spy!",
+    "nextRound": "Next round"
+  },
+  "gameOverScreen": {
+    "listIsOver": "List of locations is over :(",
+    "restartGame": "Restart game"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "gameSpyByTr70k": "Игра «Шпион» от tr70k",
+  "initialScreen": {
+    "gameSettings": "Игровые настройки",
+    "language": "Язык",
+    "playersCount": "Количество игроков",
+    "timeForRound": "Время на раунд",
+    "min": "мин",
+    "startGame": "Начать игру"
+  },
+  "startScreen": {
+    "player": "Игрок",
+    "clickShow": "Нажмите «Показать», чтобы увидеть локацию!",
+    "youAreSpy": "Вы шпион!",
+    "location": "Локация",
+    "show": "Показать",
+    "nextPlayer": "Следующий игрок"
+  },
+  "timerScreen": {
+    "timeLeft": "Осталось времени",
+    "askEachOther": "Задавайте друг другу вопросы и узнайте, кто шпион!",
+    "timeIsOver": "Время закончилось!",
+    "showResult": "Показать результат"
+  },
+  "resultScreen": {
+    "roundResult": "Результат раунда",
+    "location": "Локация",
+    "playerIsSpy": "Игрок {{spyIndex}} оказался Шпионом!",
+    "nextRound": "Следующий раунд"
+  },
+  "gameOverScreen": {
+    "listIsOver": "Список локаций исчерпан :(",
+    "restartGame": "Перезапустить игру"
+  }
+}

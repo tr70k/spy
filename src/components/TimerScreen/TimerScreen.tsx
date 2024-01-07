@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Typography, Button } from '@mui/material';
 import { useGame } from '../../GameContext';
 
@@ -6,6 +7,7 @@ const getTimeString = (secondsLeft: number) => `${Math.floor(secondsLeft / 60)}:
 
 export const TimerScreen = () => {
   const game = useGame();
+  const { t } = useTranslation();
   const [secondsLeft, setSecondsLeft] = useState<number>(() => game.timeForRound * 60);
 
   const tick = useCallback((secondsLeft: number) => {
@@ -23,13 +25,13 @@ export const TimerScreen = () => {
 
   return <>
     <div>
-      <Typography variant="h5" mb={2}>Time left: {getTimeString(secondsLeft)}</Typography>
+      <Typography variant="h5" mb={2}>{t('timerScreen.timeLeft')}: {getTimeString(secondsLeft)}</Typography>
       {secondsLeft ? (
-        <Typography variant="h6">Ask each other questions and find out who is the Spy!</Typography>
+        <Typography variant="h6">{t('timerScreen.askEachOther')}</Typography>
       ) : (
-        <Typography variant="h4" color="red">Time is over!</Typography>
+        <Typography variant="h4" color="red">{t('timerScreen.timeIsOver')}</Typography>
       )}
     </div>
-    <Button variant="contained" onClick={game.next}>Show result</Button>
+    <Button variant="contained" onClick={game.next}>{t('timerScreen.showResult')}</Button>
   </>;
 };
