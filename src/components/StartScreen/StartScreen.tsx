@@ -34,7 +34,7 @@ export const StartScreen = () => {
         )}
     </div>
     <Button variant="contained" onClick={handleNext} fullWidth>
-      {isHidden ? 'Show' : 'Next'}
+      {isHidden ? 'Show' : 'Next player'}
     </Button>
   </>;
 };

@@ -24,7 +24,9 @@ export const TimerScreen = () => {
   return <>
     <div>
       <Typography variant="h5" mb={2}>Time left: {getTimeString(secondsLeft)}</Typography>
-      {!secondsLeft && (
+      {secondsLeft ? (
+        <Typography variant="h6">Ask each other questions and find out who is the Spy!</Typography>
+      ) : (
         <Typography variant="h4" color="red">Time is over!</Typography>
       )}
     </div>

@@ -9,7 +9,7 @@ import { GameOverScreen } from '../GameOverScreen';
 
 const Wrapper = styled('div')(
   ({ theme }) => css`
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
     padding: ${theme.spacing(2)};
     display: flex;
@@ -20,7 +20,7 @@ const Wrapper = styled('div')(
 
 const Content = styled(Paper)(
   ({ theme }) => css`
-    height: 300px;
+    height: 340px;
     width: 340px;
     max-height: 100%;
     max-width: 100%;
