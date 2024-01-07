@@ -12,6 +12,10 @@ export const TimerScreen = () => {
 
   const tick = useCallback((secondsLeft: number) => {
     if (secondsLeft > 0) {
+      if (secondsLeft === 1) {
+        (new Audio('/sound/timeout.mp3')).play();
+      }
+
       setTimeout(() => {
         setSecondsLeft(secondsLeft - 1);
         tick(secondsLeft - 1);
