@@ -13,7 +13,8 @@ export const TimerScreen = () => {
   const tick = useCallback((secondsLeft: number) => {
     if (secondsLeft > 0) {
       if (secondsLeft === 1) {
-        (new Audio('/sound/timeout.mp3')).play();
+        // TODO: request permissions for play sounds
+        (new Audio('/sound/timeout.mp3'))?.play().catch((e) => console.log('Error:', e));
       }
 
       setTimeout(() => {
