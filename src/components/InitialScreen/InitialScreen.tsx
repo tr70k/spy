@@ -34,7 +34,7 @@ export const InitialScreen = () => {
       />
     </div>
     <div>
-      <Button variant="contained" onClick={game.next} fullWidth>Start</Button>
+      <Button variant="contained" onClick={game.next} fullWidth>Start game</Button>
     </div>
   </>;
 };

@@ -58,11 +58,13 @@ export const GameProvider: FC<GameProviderProps> = ({ children }) => {
   const [timeForRound, setTimeForRound] = useState<number>(TIME_FOR_ROUND_DEFAULT);
   const [playersCount, setPlayersCount] = useState<number>(PLAYERS_COUNT_DEFAULT);
   const [spyPlayerIndex, setSpyPlayerIndex] = useState<number>(0);
-  const [locations] = useState<Location[]>(() => shuffle(LOCATIONS));
+  const [locations, setLocations] = useState<Location[]>(LOCATIONS);
   const [currentLocationIndex, setCurrentLocationIndex] = useState<number>(0);
 
   const next = useCallback(() => {
     if (status === STATUSES.INITIAL) {
+      setLocations(shuffle(LOCATIONS));
+      setCurrentLocationIndex(0);
       setSpyPlayerIndex(random(playersCount - 1));
       setStatus(STATUSES.START);
       return;
@@ -75,6 +77,14 @@ export const GameProvider: FC<GameProviderProps> = ({ children }) => {
 
     if (status === STATUSES.TIMER) {
       setStatus(STATUSES.RESULT);
+      return;
+    }
+
+    if (status === STATUSES.GAME_OVER) {
+      setLocations(shuffle(LOCATIONS));
+      setCurrentLocationIndex(0);
+      setSpyPlayerIndex(random(playersCount - 1));
+      setStatus(STATUSES.START);
       return;
     }
 

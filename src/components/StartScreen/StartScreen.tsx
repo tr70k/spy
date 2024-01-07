@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Typography, Button } from '@mui/material';
 import { useGame } from '../../GameContext';
-import {getLocationName} from '../../utils';
+import { getLocationName } from '../../utils';
 
 export const StartScreen = () => {
   const game = useGame();

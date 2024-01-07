@@ -5,6 +5,7 @@ import { InitialScreen } from '../InitialScreen';
 import { StartScreen } from '../StartScreen';
 import { TimerScreen } from '../TimerScreen';
 import { ResultScreen } from '../ResultScreen';
+import { GameOverScreen } from '../GameOverScreen';
 
 const Wrapper = styled('div')(
   ({ theme }) => css`
@@ -45,7 +46,7 @@ export const Game = () => {
     case STATUSES.RESULT:
       return <ResultScreen />;
     case STATUSES.GAME_OVER:
-      return <ResultScreen />;
+      return <GameOverScreen />;
     }
   };
 
