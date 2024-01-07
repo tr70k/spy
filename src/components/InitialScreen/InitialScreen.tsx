@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import useDoubleClick from 'use-double-click';
 import {
   PLAYERS_COUNT_MAX,
   PLAYERS_COUNT_MIN,
@@ -10,6 +11,8 @@ import {
   useGame
 } from '../../GameContext';
 import { Typography, Slider, Button, styled, css } from '@mui/material';
+
+const DONATION_FOR_RU_LANG = 'https://savelife.in.ua/donate/';
 
 const LangWrapper = styled('div')(
   ({ theme }) => css`
@@ -44,15 +47,27 @@ type LangButtonProps = {
   flag: string
 }
 
-// const langs = ['en', 'uk', 'ru']
-
 const LangButton = ({ lang, flag }: LangButtonProps) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const { i18n } = useTranslation();
   const currentLang = i18n.language ?? 'en';
 
+  useDoubleClick({
+    onSingleClick: () => {
+      if (lang === 'ru') {
+        window.open(DONATION_FOR_RU_LANG, '_blank');
+      } else {
+        i18n.changeLanguage(lang);
+      }
+    },
+    onDoubleClick: () => i18n.changeLanguage(lang),
+    ref: buttonRef,
+    latency: 250
+  });
+
   return <LangButtonStyled
     variant={currentLang === lang ? 'contained' : undefined}
-    onClick={() => i18n.changeLanguage(lang)}
+    ref={buttonRef}
     size="small"
   >
     {flag}
