@@ -12,7 +12,8 @@ const Wrapper = styled('div')(
   ({ theme }) => css`
     height: 100dvh;
     width: 100%;
-    min-width: 340px;
+    min-height: 400px;
+    min-width: 360px;
     padding: ${theme.spacing(2)};
     display: flex;
     align-items: center;
